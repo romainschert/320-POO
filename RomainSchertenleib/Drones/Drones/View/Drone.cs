@@ -22,4 +22,13 @@ namespace Drones
         }
 
     }
+    public partial class Buliding
+    {
+        private Pen BulidingsBrush = new Pen(new SolidBrush(Color.Purple), 3);
+        public void Render(BufferedGraphics drawingSpace)
+        {
+            drawingSpace.Graphics.DrawRectangle(BulidingsBrush, new Rectangle(x - 4, y - 2, 20, 20));
+            drawingSpace.Graphics.DrawString($"{this}", TextHelpers.drawFont, TextHelpers.writingBrush, x + 5, y - 5);
+        }
+    }
 }

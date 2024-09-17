@@ -21,4 +21,13 @@
         }
 
     }
+    public partial class Buliding
+    {
+        public int charge = 1000;
+        public int x;
+        public int y;
+        public int width;
+        public int height;
+        public string color;
+    }
 }
