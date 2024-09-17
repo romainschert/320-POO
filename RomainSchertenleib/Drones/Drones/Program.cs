@@ -24,7 +24,7 @@ namespace Drones
             Store store = new Store();
             drone.x = 100;
             drone.y = 100;
-            drone.name = "ben";
+            drone.name = "joe";
             fleet.Add(drone);
             bulidings.Add(buliding);
             bulidings.Add(buliding2);
