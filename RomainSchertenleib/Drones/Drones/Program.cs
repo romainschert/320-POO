@@ -1,3 +1,6 @@
+using System;
+using System.Runtime.CompilerServices;
+
 namespace Drones
 {
     internal static class Program
@@ -24,7 +27,7 @@ namespace Drones
             Store store = new Store();
             drone.x = 100;
             drone.y = 100;
-            drone.name = "joe";
+            drone.name = "ben";
             fleet.Add(drone);
             bulidings.Add(buliding);
             bulidings.Add(buliding2);
@@ -40,10 +43,32 @@ namespace Drones
             store.y = 130;
             store.x = 490;
 
+            
 
 
+            try
+            {
+                //Drone drone= new Drone();
+                //Drone.MaMethode(5);
+
+                if (fleet.Count() < 10)
+                {
+                    throw new ArgumentException("La valeur de x est inférieure à 10 !");
+                }
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine($"Erreur : {e.Message}");
+            }
             // Démarrage
-            Application.Run(new AirSpace(fleet,bulidings,factorys,stores));
+            try
+            {
+                Application.Run(new AirSpace(fleet, bulidings, factorys, stores));
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Il y a eu une erreur");
+            }
         }
     }
 }
