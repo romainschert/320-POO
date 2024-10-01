@@ -51,7 +51,7 @@ namespace Drones
                 //Drone drone= new Drone();
                 //Drone.MaMethode(5);
 
-                if (fleet.Count() < 10)
+                if (fleet.Count() > 10)
                 {
                     throw new ArgumentException("La valeur de x est inférieure à 10 !");
                 }
