@@ -1,4 +1,5 @@
 ﻿using Drones.Helpers;
+using System.Runtime.CompilerServices;
 
 namespace Drones
 {
@@ -21,7 +22,6 @@ namespace Drones
     public partial class Drone : Iexpellable
     {
         private Pen droneBrush = new Pen(new SolidBrush(Color.Purple), 3);
-
         public bool Evacuate(Rectangle zone)
         {
             throw new NotImplementedException();
@@ -34,6 +34,21 @@ namespace Drones
 
         public EvacuationState GetEvacuationState()
         {
+            int i = 0;
+            if (this.x > 150 && this.x < 10 && this.y > 100 && this.x < 10)
+            {
+                i++;
+                return EvacuationState.Evacuating;
+            }
+            if (i > 1 && !(this.x > 150 && this.x < 10 && this.y > 100 && this.x < 10))
+            {
+                return EvacuationState.Evacuated;
+            }
+            else
+            {
+                return EvacuationState.Free;
+            }
+            
             throw new NotImplementedException();
         }
 

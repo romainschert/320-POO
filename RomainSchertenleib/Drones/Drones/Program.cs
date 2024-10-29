@@ -25,6 +25,10 @@ namespace Drones
             Buliding buliding2 = new Buliding();
             Factory factory = new Factory();
             Store store = new Store();
+            Rectangle r1 = new Rectangle(10, 10, 100, 150);
+            Rectangle r2 = new Rectangle(30, 100, 150, 100); 
+            Rectangle r3 = new Rectangle(200, 300, 50, 50);
+
             drone.x = 100;
             drone.y = 100;
             drone.name = "ben";
@@ -34,16 +38,16 @@ namespace Drones
             factorys.Add(factory);
             stores.Add(store);
 
-            buliding.x = 400;
+            buliding.x = 20;
             buliding.y = 100;
-            buliding2.y = 70;
-            buliding2.x = 410;
-            factory.y = 150;
+            buliding2.y = 400;
+            buliding2.x = 105;
+            factory.y = 32;
             factory.x = 500;
             store.y = 130;
             store.x = 490;
 
-            
+         
 
 
             try
@@ -53,7 +57,7 @@ namespace Drones
 
                 if (fleet.Count() > 10)
                 {
-                    throw new ArgumentException("La valeur de x est inférieure à 10 !");
+                    throw new ArgumentException ("La valeur de x est inférieure à 10 !");
                 }
             }
             catch (ArgumentException e)
